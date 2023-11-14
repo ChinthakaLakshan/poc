@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="Installation Item Details">
+        <div class="slds-m-around_medium">
+            <template if:true={installationItems}>
+                <template for:each={installationItems} for:item="item">
+                    <p key={item.Id}>Id: {item.Id}</p>
+                    <p key={item.Name}>Name: {item.Name}</p>
+                    <p key={item.Version_c}>Version: {item.Version__c}</p>
+                    <p key={item.Region_c}>Region: {item.Region__c}</p>
+                    <p key={item.Per_unit_cost_c}>Unit Cost: {item.per_unit_cost__c}</p>
+                    <p key={item.Warranty_period_c}>Warranty Period: {item.Warranty_period__c}</p>
+                </template>
+            </template>
+            <template if:false={installationItems}>
+                <p>No Installation Items found.</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>
